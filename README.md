@@ -1,79 +1,79 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Exploring the Synergy of React Native and Stream SDK
 
-# Getting Started
+- In today's world, real-time communication is a fundamental part of many applications. Whether it's a messaging app, a support chat, or collaborative workspaces, integrating chat functionality is a common requirement. Stream Chat SDK simplifies this process, making it easier than ever to add chat features to your React Native CLI application. In this repo, we'll walk you through the steps to create a chat application using Stream Chat SDK and React Native CLI.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# Prerequisites
+- Before we get started, make sure you have the following prerequisites:
 
-## Step 1: Start the Metro Server
+  1. Node.js and npm: Ensure you have Node.js and npm installed on your development machine.
+  2. React Native CLI: Set up React Native CLI on your system by following the official documentation.
+  3. Stream Chat Account: Sign up for a Stream Chat account at https://getstream.io/chat/ and obtain your API Key.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Setting Up Your React Native Project
+- If you haven't already created a React Native project, you can do so using the following command:
+  
+  ```
+  npx react-native init YourChatApp
+  ```
+  - Replace YourChatApp with your desired project name.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Integrating Stream Chat SDK
+- Now, let's integrate Stream Chat SDK into your React Native project using the provided code. Copy the code you provided at the beginning of this post into your project. This code sets up a basic chat screen with Stream Chat components.
 
-```bash
-# using npm
-npm start
+``` js
+import {
+  Channel,
+  ChannelList,
+  Chat,
+  MessageInput,
+  MessageList,
+  OverlayProvider,
+} from 'stream-chat-react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { ChatContextProvider } from './ChatContext';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { StreamChat } from 'stream-chat';
 
-# OR using Yarn
-yarn start
+const API_KEY = 'your api key';
+const client = StreamChat.getInstance(API_KEY);
+
+// ...
+
+// Rest of your code remains the same
+
+```
+## Configuration
+
+Before running your React Native application, you need to configure it properly. Update the `id` and `name` fields in the `connectUser` method with appropriate user details:
+
+``` js
+await client.connectUser(
+  {
+    id: 'your-user-id',
+    name: 'your-user-name',
+  },
+  client.devToken('your-user-id'),
+);
+
 ```
 
-## Step 2: Start your Application
+- Replace `'your-user-id'` and `'your-user-name'` with the user information you want to use for testing.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Running Your Chat Application
+- With the Stream Chat SDK integrated and configured, you can now run your React Native application:
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
 ```
+npx react-native run-android # For Android
+# or
+npx react-native run-ios # For iOS
 
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
 ```
+- This command will start your React Native development server and open your application on the specified platform. You should see the chat interface on your device or emulator.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Benefits of Using React Native with StreamSDK
+- Cross-Platform Development: React Native allows you to write code once and deploy it on both iOS and Android platforms. When combined with Stream SDK, you can create real-time chat and activity feed functionality that works seamlessly across both major mobile platforms, reducing development time and effort.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- Reusability: React Native promotes the use of reusable components. When you integrate Stream SDK, you can create custom chat and activity feed components that can be reused throughout your app, maintaining a consistent look and feel.
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Thank you all for coming ☺🥳
