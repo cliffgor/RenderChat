@@ -14,7 +14,7 @@
 
 - In today's world, real-time communication is a fundamental part of many applications. Whether it's a messaging app, a support chat, or collaborative workspaces, integrating chat functionality is a common requirement. Stream Chat SDK simplifies this process, making it easier than ever to add chat features to your React Native CLI application. In this repo, we'll walk you through the steps to create a chat application using Stream Chat SDK and React Native CLI.
 
-<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fraw%2Egithubusercontent%2Ecom%3A443%2Fcliffgor%2FRenderChat%2Fmaster%2FExploring%2520the%2520Synergy%2520of%2520React%2520Native%2520and%2520Stream%2Epptx&amp;wdAr=1.7777777777777777" width="476px" height="565px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+
 
 ## Dashboard screenshots
 
